@@ -18,3 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('farmacias', 'FarmaciasController');
+Route::resource('productos', 'ProductosController');
+// Route::resource('inventarios', 'InventariosController');
+
+Route::get('nuevoInventario/{producto}', 'InventariosController@create')->name('inventarios.create');
+Route::get('inventarios', 'InventariosController@index')->name('inventarios.index');
+Route::post('inventarios', 'InventariosController@store')->name('inventarios.store');
+
+
+Route::get('/logout', 'Auth\LoginController@logout');
+

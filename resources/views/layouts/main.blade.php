@@ -10,10 +10,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>AdminLTE 3 | Starter</title>
+  <title>SIS-FARMASALUD</title>
 
   <link rel="stylesheet" href="/css/app.css">
- 
+
 </head>
 <body class="hold-transition sidebar-mini" >
 <div class="wrapper" id="app">
@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
-     
+
     </ul>
 
     <!-- SEARCH FORM -->
@@ -43,9 +43,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
-      
+
       <!-- Notifications Dropdown Menu -->
-      
+
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
             class="fa fa-th-large"></i></a>
@@ -58,9 +58,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="horse.png" class="brand-link">
-      <img src="img/horse.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Gpetto</span>
+      <span class="brand-text font-weight-light">SIS-FARMASALUD</span>
     </a>
 
     <!-- Sidebar -->
@@ -104,14 +104,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-th"></i>
+            <a href="{{route('farmacias.index')}}" class="nav-link">
+              <i class="nav-icon fa fa-hospital"></i>
               <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
+               Sucursales
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+                <a href="{{route('productos.index')}}" class="nav-link">
+                    <i class="nav-icon fa fa-medkit"></i>
+                    <p>
+                    Productos
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{route('inventarios.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-dolly-flatbed"></i>
+                    <p>
+                    Inventarios
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                    <a href="{{route('logout')}}" class="nav-link">
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>
+                        Cerrar Sesión
+                        </p>
+                    </a>
+                </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -142,7 +169,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-       
+
         @yield('content')
       </div><!-- /.container-fluid -->
     </div>
@@ -174,5 +201,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 <script src="/js/app.js"></script>
+
+{{-- Script Agregado Validación de Formularios Bootstrap --}}
+<script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+        </script>
 </body>
 </html>
