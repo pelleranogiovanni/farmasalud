@@ -19,6 +19,7 @@ class CreateInventariosTable extends Migration
             $table->integer('serie');
             $table->date('vencimiento');
             $table->integer('stockMinimo');
+            $table->integer('stock');
             $table->float('costo');
             $table->unsignedInteger('id_producto');
             $table->timestamps();

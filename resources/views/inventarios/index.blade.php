@@ -29,24 +29,24 @@
                     @foreach ($inventarios as $inventario)
                         <tr>
                         <td>{{$inventario->id}}</td>
-                        <td>{{$inventario->producto->nombrecomercial}}</td>
-                        {{-- <td>{{$producto->nombregenerico}}</td> --}}
-                        <td>{{$inventario->stockMinimo}}</td>
+                        <td>{{$inventario->producto->codigoproducto}}</td>
+                        <td>{{$inventario->producto->nombregenerico}}</td>
+                        <td>{{$inventario->stock}}</td>
                         <td>{{$inventario->stockMinimo}}</td>
                         <td>{{$inventario->lote}}</td>
                         <td>{{$inventario->serie}}</td>
                         <td>{{$inventario->costo}}</td>
                         <td>
-                        {{-- <div class="btn-group">
-                            <a href="{{route('farmacias.edit',$farmacia->id)}}" class="btn btn-secondary mr-1"><i class="fa fa-edit"></i> Editar</a>
-                            <a href="{{route('farmacias.show',$farmacia->id)}}" class="btn btn-info mr-1"><i class="fas fa-eye"></i></i> Ver</a>
-                            <form action="{{route('farmacias.destroy',$farmacia->id)}}" method="POST">
+                        <div class="btn-group">
+                            <a href="{{route('inventarios.edit',$inventario->id)}}" class="btn btn-secondary mr-1"><i class="fa fa-edit"></i> Editar</a>
+                            <a href="{{route('inventarios.ver',$inventario->id)}}" class="btn btn-info mr-1"><i class="fas fa-eye"></i></i> Ver</a>
+                            <form action="{{route('inventarios.destroy',$inventario->id)}}" method="POST">
                                 @method('DELETE')
                                 @csrf
 
                                 <button class="btn btn-danger mr-1" type="submit"><i class="fa fa-trash"></i> Eliminar</button>
                             </form>
-                        </div> --}}
+                        </div>
                         {{-- <div class="row">
                         <a href="{{route('productos.edit',$producto->id)}}" class="btn btn-primary btn-circle mr-1 ml-2"><i class="fa fa-edit"></i></a>
                         <a href="{{route('inventarios.create',$producto->id)}}" class="btn btn-success btn-circle mr-1 ml-2"><i class="fa fa-edit"></i></a>

@@ -57,6 +57,7 @@
                         <a href="{{route('productos.edit',$producto->id)}}" class="btn btn-primary btn-circle mr-1 ml-2"><i class="fa fa-edit"></i></a>
                         <a href="{{route('inventarios.create',$producto->id)}}" class="btn btn-success btn-circle mr-1"><i class="fa fa-edit"></i></a>
                         <a href="{{route('productos.show',$producto->id)}}" class="btn btn-info btn-circle mr-1"><i class="fa fa-eye"></i></a>
+                        <a href="{{route('inventarios.show',$producto->id)}}" class="mr-1"><i class="fa fa-warehouse"></i></a>
 
                         <form action="{{route('productos.destroy',$producto->id)}}" method="POST">
                                 @method('DELETE')

@@ -12,12 +12,18 @@ class InventariosController extends Controller
 
     public function index(){
 
-        $inventarios = Inventario::all();
-        return $inventarios->producto;
+        // $inventarios = Inventario::all();
+
+        // return view('inventarios.index', compact('inventarios'));
+    }
+
+    public function show($id){
+        $inventarios = Inventario::where('id_producto', $id)->get();
         return view('inventarios.index', compact('inventarios'));
     }
 
     public function create($id){
+
         $producto = Producto::find($id);
 
         return view('inventarios.create', compact('producto'));
@@ -29,6 +35,17 @@ class InventariosController extends Controller
 
         return redirect()->route('productos.index');
 
+    }
+
+    public function edit($id){
+        $inventario = Inventario::find($id);
+        return view('inventario.edit', compact('inventario'));
+    }
+
+    public function ver($id){
+        $inventario = Inventario::find($id);
+
+        return view('inventarios.show', compact('inventario'));
     }
 
 }
