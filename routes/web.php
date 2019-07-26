@@ -28,6 +28,7 @@ Route::get('nuevoInventario/{producto}', 'InventariosController@create')->name('
 // Route::get('inventarios', 'InventariosController@index')->name('inventarios.index');
 // Route::post('inventarios', 'InventariosController@store')->name('inventarios.store');
 
+Route::get('productos/{id}/destroy', 'ProductosController@destroy')->name('producto.destroy'); //ruta para eliminar producto
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
